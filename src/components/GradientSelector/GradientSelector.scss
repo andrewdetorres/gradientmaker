@@ -9,8 +9,13 @@
   background: rgba(41,128,185,1);
   background: -webkit-linear-gradient(rgba(41,128,185,1),rgba(125,250,109,1));
   background: linear-gradient(rgba(41,128,185,1),rgba(125,250,109,1));
+  .main-title {
+    @media screen and (max-width: 700px) {
+      font-size: 1.2rem;
+    }
+  }
   .beta {
-    font-size: 1rem;
+    font-size: 0.6rem;
   }
   .popover-first {
     position: absolute;

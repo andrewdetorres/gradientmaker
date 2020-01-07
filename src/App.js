@@ -11,7 +11,7 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 import GradientSelector from './components/GradientSelector/GradientSelector';
 
 import ReactGA from 'react-ga';
-ReactGA.initialize('Your Unique ID');
+ReactGA.initialize(process.env.TRACKING_ID);
 
 class App extends Component {
 
