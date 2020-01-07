@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import { SketchPicker } from 'react-color';
 import { CopyBlock } from 'react-code-blocks'
 import atomOneLight from 'react-code-blocks/build/cjs/themes/atom-one-light';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+// Import Components
+import Direction from '../Direction/Direction';
 
 class GradientSelector extends Component {
   state = {
@@ -129,47 +131,54 @@ class GradientSelector extends Component {
           <div className="card-body">
             <div className="row my-3">
               <div className="col w-auto text-center my-3">
-                <h1>Quick Gradient</h1>
+                <h1 className="main-title">QuickGradient</h1>
               </div>
             </div>
             <div className="row justify-content-center my-3">
               <div className="col w-auto text-center">
-                <button onClick={ this.handleClick } className="color-button border-0" style={firstButtonStyle}></button>
+                <button 
+                  onClick={this.handleClick} 
+                  className="color-button border-0" 
+                  style={firstButtonStyle}
+                  />
                 {firstPicker}
                 <p>1st</p>
               </div>
               <div className="col w-auto text-center">
-                <button onClick={ this.handleSecondClick } className="color-button border-0" style={secondButtonStyle}></button>
+                <button 
+                  onClick={this.handleSecondClick} 
+                  className="color-button border-0" 
+                  style={secondButtonStyle}
+                  />
                 {secondPicker}
                 <p>2nd</p>
               </div>
             </div>
-
             <div className="row justify-content-around my-3">
-              <div onClick={this.ChangeDirectionTop} className="grad grad-top">
-                <FontAwesomeIcon icon={['fas', 'arrow-up']} className="my-auto"/>
-              </div>
-              <div onClick={this.ChangeDirectionTopRight} className="grad grad-top-right">
-                <FontAwesomeIcon icon={['fas', 'arrow-up']} className="my-auto"/>
-              </div>
-              <div onClick={this.ChangeDirectionRight} className="grad grad-right">
-                <FontAwesomeIcon icon={['fas', 'arrow-up']} className="my-auto"/>
-              </div>
-              <div onClick={this.ChangeDirectionBottomRight} className="grad grad-bottom-right">
-                <FontAwesomeIcon icon={['fas', 'arrow-up']} className="my-auto"/>
-              </div>
-              <div onClick={this.ChangeDirectionBottom} className="grad grad-bottom">
-                <FontAwesomeIcon icon={['fas', 'arrow-up']} className="my-auto"/>
-              </div>
-              <div onClick={this.ChangeDirectionBottomLeft} className="grad grad-bottom-left">
-                <FontAwesomeIcon icon={['fas', 'arrow-up']} className="my-auto"/>
-              </div>
-              <div onClick={this.ChangeDirectionLeft} className="grad grad-left">
-                <FontAwesomeIcon icon={['fas', 'arrow-up']} className="my-auto"/>
-              </div>
-              <div onClick={this.ChangeDirectionTopLeft} className="grad grad-top-left">
-                <FontAwesomeIcon icon={['fas', 'arrow-up']} className="my-auto"/>
-              </div>
+              <Direction 
+                function={this.ChangeDirectionTop} 
+                class="grad grad-top"/>
+              <Direction 
+                function={this.ChangeDirectionTopRight} 
+                class="grad grad-top-right"/>
+              <Direction 
+                function={this.ChangeDirectionRight} 
+                class="grad grad-right"/>
+              <Direction 
+                function={this.ChangeDirectionBottomRight} 
+                class="grad grad-bottom-right"/>
+              <Direction 
+                function={this.ChangeDirectionBottom} 
+                class="grad grad-bottom"/>
+              <Direction 
+                function={this.ChangeDirectionBottomLeft} 
+                class="grad grad-bottom-left"/>
+              <Direction 
+                function={this.ChangeDirectionLeft} 
+                class="grad grad-left"/>
+              <Direction 
+                function={this.ChangeDirectionTopLeft} 
+                class="grad grad-top-left"/>
             </div>
             <div className="row justify-content-center my-3 mx-auto">
               <CopyBlock

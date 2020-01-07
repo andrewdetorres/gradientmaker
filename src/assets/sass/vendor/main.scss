@@ -1,8 +1,12 @@
 // Import Utilities
 @import "../utils/variables";
 
+// Import Global
+@import "../Global/global";
+
 // Import Bootstrap
 @import "../../bootstrap/scss/bootstrap.scss";
 
 // Import Component Styling
 @import "../../../components/GradientSelector/GradientSelector";
+@import "../../../components/Direction/Direction";

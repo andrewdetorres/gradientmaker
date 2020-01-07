@@ -40,32 +40,4 @@
       white-space: pre !important;
     }
   }
-  .grad {
-    display: inline-block;
-    font-size: 25px;
-    &:hover {
-      color: #505050;
-    }
-    &.grad-top-right {
-      transform: rotate(45deg);
-    }
-    &.grad-right {
-      transform: rotate(90deg);
-    }
-    &.grad-bottom-right {
-      transform: rotate(135deg);
-    }
-    &.grad-bottom {
-      transform: rotate(180deg);
-    }
-    &.grad-bottom-left {
-      transform: rotate(225deg);
-    }
-    &.grad-left {
-      transform: rotate(270deg);
-    }
-    &.grad-top-left {
-      transform: rotate(315deg);
-    }
-  }
 }
