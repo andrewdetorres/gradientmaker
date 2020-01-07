@@ -26,7 +26,7 @@
     border-radius: 100%;
   }
   code {
-    color: grey !important;
+    color: #505050 !important;
     font-size: 0.6rem !important;
   }
   #copy_1 {
@@ -43,6 +43,9 @@
   .grad {
     display: inline-block;
     font-size: 25px;
+    &:hover {
+      color: #505050;
+    }
     &.grad-top-right {
       transform: rotate(45deg);
     }

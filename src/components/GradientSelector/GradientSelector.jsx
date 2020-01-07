@@ -20,6 +20,7 @@ class GradientSelector extends Component {
     },
     displayColorPicker: false,
     displaySecondColorPicker: false,
+    direction: "to bottom,",
     codeBlock: ""
   };
 
@@ -53,6 +54,31 @@ class GradientSelector extends Component {
     this.setState({ displaySecondColorPicker: false })
   };
 
+  ChangeDirectionTop = () => {
+    this.setState({direction: 'to top,'})
+  }
+  ChangeDirectionTopRight = () => {
+    this.setState({direction: 'to top right,'})
+  }
+  ChangeDirectionRight = () => {
+    this.setState({direction: 'to right,'})
+  }
+  ChangeDirectionBottomRight = () => {
+    this.setState({direction: 'to bottom right,'})
+  }
+  ChangeDirectionBottom = () => {
+    this.setState({direction: 'to bottom,'})
+  }
+  ChangeDirectionBottomLeft = () => {
+    this.setState({direction: 'to bottom left,'})
+  }
+  ChangeDirectionLeft = () => {
+    this.setState({direction: 'to left,'})
+  }
+  ChangeDirectionTopLeft = () => {
+    this.setState({direction: 'to top left,'})
+  }
+
   render() {
 
     const firstPicker = this.state.displayColorPicker ?
@@ -80,7 +106,7 @@ class GradientSelector extends Component {
     : null;
 
     const backgroundStyle = {
-      background: `linear-gradient(rgba(${this.state.firstBackground.r},${this.state.firstBackground.g},${this.state.firstBackground.b},${this.state.firstBackground.a}),rgba(${this.state.secondBackground.r},${this.state.secondBackground.g},${this.state.secondBackground.b},${this.state.secondBackground.a}))`
+      background: `linear-gradient(${this.state.direction}rgba(${this.state.firstBackground.r},${this.state.firstBackground.g},${this.state.firstBackground.b},${this.state.firstBackground.a}),rgba(${this.state.secondBackground.r},${this.state.secondBackground.g},${this.state.secondBackground.b},${this.state.secondBackground.a}))`
     };
 
     const firstButtonStyle = {
@@ -93,8 +119,8 @@ class GradientSelector extends Component {
 
     const code = `
     background: rgba(${this.state.firstBackground.r},${this.state.firstBackground.g},${this.state.firstBackground.b},${this.state.firstBackground.a});
-    background: -webkit-linear-gradient(rgba(${this.state.firstBackground.r},${this.state.firstBackground.g},${this.state.firstBackground.b},${this.state.firstBackground.a}),rgba(${this.state.secondBackground.r},${this.state.secondBackground.g},${this.state.secondBackground.b},${this.state.secondBackground.a}));
-    background: linear-gradient(rgba(${this.state.firstBackground.r},${this.state.firstBackground.g},${this.state.firstBackground.b},${this.state.firstBackground.a}),rgba(${this.state.secondBackground.r},${this.state.secondBackground.g},${this.state.secondBackground.b},${this.state.secondBackground.a}));
+    background: -webkit-linear-gradient(${this.state.direction}rgba(${this.state.firstBackground.r},${this.state.firstBackground.g},${this.state.firstBackground.b},${this.state.firstBackground.a}),rgba(${this.state.secondBackground.r},${this.state.secondBackground.g},${this.state.secondBackground.b},${this.state.secondBackground.a}));
+    background: linear-gradient(${this.state.direction}rgba(${this.state.firstBackground.r},${this.state.firstBackground.g},${this.state.firstBackground.b},${this.state.firstBackground.a}),rgba(${this.state.secondBackground.r},${this.state.secondBackground.g},${this.state.secondBackground.b},${this.state.secondBackground.a}));
     `;
 
     return (
@@ -120,29 +146,29 @@ class GradientSelector extends Component {
             </div>
 
             <div className="row justify-content-around my-3">
-              <div className="grad grad-top">
-                <FontAwesomeIcon icon={['far', 'arrow-alt-circle-up']} className="my-auto"/>
+              <div onClick={this.ChangeDirectionTop} className="grad grad-top">
+                <FontAwesomeIcon icon={['fas', 'arrow-up']} className="my-auto"/>
               </div>
-              <div className="grad grad-top-right">
-                <FontAwesomeIcon icon={['far', 'arrow-alt-circle-up']} className="my-auto"/>
+              <div onClick={this.ChangeDirectionTopRight} className="grad grad-top-right">
+                <FontAwesomeIcon icon={['fas', 'arrow-up']} className="my-auto"/>
               </div>
-              <div className="grad grad-right">
-                <FontAwesomeIcon icon={['far', 'arrow-alt-circle-up']} className="my-auto"/>
+              <div onClick={this.ChangeDirectionRight} className="grad grad-right">
+                <FontAwesomeIcon icon={['fas', 'arrow-up']} className="my-auto"/>
               </div>
-              <div className="grad grad-bottom-right">
-                <FontAwesomeIcon icon={['far', 'arrow-alt-circle-up']} className="my-auto"/>
+              <div onClick={this.ChangeDirectionBottomRight} className="grad grad-bottom-right">
+                <FontAwesomeIcon icon={['fas', 'arrow-up']} className="my-auto"/>
               </div>
-              <div className="grad grad-bottom">
-                <FontAwesomeIcon icon={['far', 'arrow-alt-circle-up']} className="my-auto"/>
+              <div onClick={this.ChangeDirectionBottom} className="grad grad-bottom">
+                <FontAwesomeIcon icon={['fas', 'arrow-up']} className="my-auto"/>
               </div>
-              <div className="grad grad-bottom-left">
-                <FontAwesomeIcon icon={['far', 'arrow-alt-circle-up']} className="my-auto"/>
+              <div onClick={this.ChangeDirectionBottomLeft} className="grad grad-bottom-left">
+                <FontAwesomeIcon icon={['fas', 'arrow-up']} className="my-auto"/>
               </div>
-              <div className="grad grad-left">
-                <FontAwesomeIcon icon={['far', 'arrow-alt-circle-up']} className="my-auto"/>
+              <div onClick={this.ChangeDirectionLeft} className="grad grad-left">
+                <FontAwesomeIcon icon={['fas', 'arrow-up']} className="my-auto"/>
               </div>
-              <div className="grad grad-top-left">
-                <FontAwesomeIcon icon={['far', 'arrow-alt-circle-up']} className="my-auto"/>
+              <div onClick={this.ChangeDirectionTopLeft} className="grad grad-top-left">
+                <FontAwesomeIcon icon={['fas', 'arrow-up']} className="my-auto"/>
               </div>
             </div>
             <div className="row justify-content-center my-3 mx-auto">
