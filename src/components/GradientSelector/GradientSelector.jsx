@@ -1,22 +1,24 @@
 import React, { Component } from 'react'
 import { SketchPicker } from 'react-color';
+import { CopyBlock } from 'react-code-blocks'
 
 class GradientSelector extends Component {
   state = {
     firstBackground: {
-      r: 51,
-      g: 51,
-      b: 51,
+      r: 41,
+      g: 128,
+      b: 185,
       a: 1
     },
     secondBackground: {
-      r: 51,
-      g: 51,
-      b: 51,
+      r: 109,
+      g: 213,
+      b: 250,
       a: 1
     },
     displayColorPicker: false,
     displaySecondColorPicker: false,
+    codeBlock: ""
   };
 
   handleFirstChangeComplete = (color) => {
@@ -27,6 +29,10 @@ class GradientSelector extends Component {
   handleSecondChangeComplete = (color) => {
     console.log(color);
     this.setState({ secondBackground: color.rgb });
+    // this.setState({
+    //   codeBlock:
+    // });
+
   };
 
   handleClick = () => {
@@ -75,14 +81,31 @@ class GradientSelector extends Component {
       background: `linear-gradient(rgba(${this.state.firstBackground.r},${this.state.firstBackground.g},${this.state.firstBackground.b},${this.state.firstBackground.a}),rgba(${this.state.secondBackground.r},${this.state.secondBackground.g},${this.state.secondBackground.b},${this.state.secondBackground.a}))`
     };
 
+    const code = `
+      background: linear-gradient(rgba(${this.state.firstBackground.r},${this.state.firstBackground.g},${this.state.firstBackground.b},${this.state.firstBackground.a}),rgba(${this.state.secondBackground.r},${this.state.secondBackground.g},${this.state.secondBackground.b},${this.state.secondBackground.a}))
+    `;
+
     return (
       <div className="main-container" style={backgroundStyle}>
-        <button onClick={ this.handleClick }>Pick Color</button>
-        {firstPicker}
-        <button onClick={ this.handleSecondClick }>Pick Color</button>
-        {secondPicker}
-        <p>First: {this.state.firstBackground.r}, {this.state.firstBackground.g}, {this.state.firstBackground.b}, {this.state.firstBackground.a}</p>
-        <p>Second: {this.state.secondBackground.r}, {this.state.secondBackground.g}, {this.state.secondBackground.b}, {this.state.secondBackground.a}</p>
+        <div className="row">
+          <div className="col-md-6 col-12 text-center">
+            <button onClick={ this.handleClick } className="btn btn-outline-dark">Pick Color</button>
+            {firstPicker}
+            <p>First: rgba({this.state.firstBackground.r}, {this.state.firstBackground.g}, {this.state.firstBackground.b}, {this.state.firstBackground.a})</p>
+          </div>
+          <div className="col-md-6 col-12 text-center">
+            <button onClick={ this.handleSecondClick }>Pick Color</button>
+            {secondPicker}
+            <p>Second: rgba({this.state.secondBackground.r}, {this.state.secondBackground.g}, {this.state.secondBackground.b}, {this.state.secondBackground.a})</p>
+          </div>
+        </div>
+        <div className="row">
+          <CopyBlock
+            text={code}
+            language="bash"
+            showLineNumbers={false}
+            />
+        </div>
       </div>
     );
   }
