@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { SketchPicker } from 'react-color';
 import { CopyBlock } from 'react-code-blocks'
+import atomOneLight from 'react-code-blocks/build/cjs/themes/atom-one-light';
 
 class GradientSelector extends Component {
   state = {
@@ -81,30 +82,45 @@ class GradientSelector extends Component {
       background: `linear-gradient(rgba(${this.state.firstBackground.r},${this.state.firstBackground.g},${this.state.firstBackground.b},${this.state.firstBackground.a}),rgba(${this.state.secondBackground.r},${this.state.secondBackground.g},${this.state.secondBackground.b},${this.state.secondBackground.a}))`
     };
 
+    const firstButtonStyle = {
+      background: `rgba(${this.state.firstBackground.r},${this.state.firstBackground.g},${this.state.firstBackground.b},${this.state.firstBackground.a})`
+    };
+
+    const secondButtonStyle = {
+      background: `rgba(${this.state.secondBackground.r},${this.state.secondBackground.g},${this.state.secondBackground.b},${this.state.secondBackground.a})`
+    };
+
     const code = `
       background: linear-gradient(rgba(${this.state.firstBackground.r},${this.state.firstBackground.g},${this.state.firstBackground.b},${this.state.firstBackground.a}),rgba(${this.state.secondBackground.r},${this.state.secondBackground.g},${this.state.secondBackground.b},${this.state.secondBackground.a}))
     `;
 
     return (
-      <div className="main-container" style={backgroundStyle}>
-        <div className="row">
-          <div className="col-md-6 col-12 text-center">
-            <button onClick={ this.handleClick } className="btn btn-outline-dark">Pick Color</button>
-            {firstPicker}
-            <p>First: rgba({this.state.firstBackground.r}, {this.state.firstBackground.g}, {this.state.firstBackground.b}, {this.state.firstBackground.a})</p>
+      <div className="main-container d-flex justify-content-center align-items-center" style={backgroundStyle}>
+        <div className="card w-50">
+          <div className="card-body">
+            <div className="row my-3">
+              <div className="col-md-6 col-12 text-center">
+              </div>
+            </div>
+            <div className="row justify-content-center my-3">
+              <div className="col-2 text-center">
+                <button onClick={ this.handleClick } className="color-button border-0" style={firstButtonStyle}></button>
+                {firstPicker}
+              </div>
+              <div className="col-2 text-center">
+                <button onClick={ this.handleSecondClick } className="color-button border-0" style={secondButtonStyle}></button>
+                {secondPicker}
+              </div>
+            </div>
+            <div className="row justify-content-center my-3">
+              <CopyBlock
+                text={code}
+                language="text"
+                theme={atomOneLight}
+                showLineNumbers={false}
+                />
+            </div>
           </div>
-          <div className="col-md-6 col-12 text-center">
-            <button onClick={ this.handleSecondClick }>Pick Color</button>
-            {secondPicker}
-            <p>Second: rgba({this.state.secondBackground.r}, {this.state.secondBackground.g}, {this.state.secondBackground.b}, {this.state.secondBackground.a})</p>
-          </div>
-        </div>
-        <div className="row">
-          <CopyBlock
-            text={code}
-            language="bash"
-            showLineNumbers={false}
-            />
         </div>
       </div>
     );
