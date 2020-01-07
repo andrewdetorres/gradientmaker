@@ -70,15 +70,20 @@ class GradientSelector extends Component {
     </div>
     )
     : null;
+
+    const backgroundStyle = {
+      background: `linear-gradient(rgba(${this.state.firstBackground.r},${this.state.firstBackground.g},${this.state.firstBackground.b},${this.state.firstBackground.a}),rgba(${this.state.secondBackground.r},${this.state.secondBackground.g},${this.state.secondBackground.b},${this.state.secondBackground.a}))`
+    };
+
     return (
-      <>
+      <div className="main-container" style={backgroundStyle}>
         <button onClick={ this.handleClick }>Pick Color</button>
         {firstPicker}
         <button onClick={ this.handleSecondClick }>Pick Color</button>
         {secondPicker}
         <p>First: {this.state.firstBackground.r}, {this.state.firstBackground.g}, {this.state.firstBackground.b}, {this.state.firstBackground.a}</p>
         <p>Second: {this.state.secondBackground.r}, {this.state.secondBackground.g}, {this.state.secondBackground.b}, {this.state.secondBackground.a}</p>
-      </>
+      </div>
     );
   }
 }
