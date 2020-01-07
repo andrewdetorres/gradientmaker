@@ -10,6 +10,9 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 // Import components
 import GradientSelector from './components/GradientSelector/GradientSelector';
 
+import ReactGA from 'react-ga';
+ReactGA.initialize('Your Unique ID');
+
 class App extends Component {
 
   render() {

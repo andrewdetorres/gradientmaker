@@ -9,6 +9,9 @@
   background: rgba(41,128,185,1);
   background: -webkit-linear-gradient(rgba(41,128,185,1),rgba(125,250,109,1));
   background: linear-gradient(rgba(41,128,185,1),rgba(125,250,109,1));
+  .beta {
+    font-size: 1rem;
+  }
   .popover-first {
     position: absolute;
     z-index: 2;
@@ -26,8 +29,8 @@
     border-radius: 100%;
   }
   code {
-    color: #505050 !important;
-    font-size: 0.6rem !important;
+    color: #363636 !important;
+    font-size: 0.8rem !important;
   }
   #copy_1 {
     margin: 0 !important;
@@ -36,8 +39,10 @@
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
+    background: #ececec;
     span {
       white-space: pre !important;
+      background: none !important;
     }
   }
 }

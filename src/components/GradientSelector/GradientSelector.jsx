@@ -131,11 +131,11 @@ class GradientSelector extends Component {
           <div className="card-body">
             <div className="row my-3">
               <div className="col w-auto text-center my-3">
-                <h1 className="main-title">QuickGradient</h1>
+                <h1 className="main-title">QuickGradient<span className="text-success beta">Beta</span></h1>
               </div>
             </div>
             <div className="row justify-content-center my-3">
-              <div className="col w-auto text-center">
+              <div className="text-center mx-3">
                 <button 
                   onClick={this.handleClick} 
                   className="color-button border-0" 
@@ -144,7 +144,7 @@ class GradientSelector extends Component {
                 {firstPicker}
                 <p>1st</p>
               </div>
-              <div className="col w-auto text-center">
+              <div className="text-center mx-3">
                 <button 
                   onClick={this.handleSecondClick} 
                   className="color-button border-0" 
@@ -167,6 +167,8 @@ class GradientSelector extends Component {
               <Direction 
                 function={this.ChangeDirectionBottomRight} 
                 class="grad grad-bottom-right"/>
+            </div>
+            <div className="row justify-content-around my-3">
               <Direction 
                 function={this.ChangeDirectionBottom} 
                 class="grad grad-bottom"/>
