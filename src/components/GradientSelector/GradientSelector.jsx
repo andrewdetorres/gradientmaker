@@ -124,7 +124,7 @@ class GradientSelector extends Component {
 
     return (
       <div className="main-container d-flex justify-content-center align-items-center" style={backgroundStyle}>
-        <div className="card w-50 border-0 shadow">
+        <div className="card border-0 shadow">
           <div className="card-body">
             <div className="row my-3">
               <div className="col w-auto text-center my-3">
