@@ -17,6 +17,12 @@
   .beta {
     font-size: 0.6rem;
   }
+  .card {
+    width: 50%;
+    @media screen and (max-width: 700px) {
+      width: 75%;
+    }
+  }
   .popover-first {
     position: absolute;
     z-index: 2;
