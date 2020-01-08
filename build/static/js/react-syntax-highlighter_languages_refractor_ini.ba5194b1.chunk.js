@@ -1,0 +1,2 @@
+(this.webpackJsonpgradientmaker=this.webpackJsonpgradientmaker||[]).push([[60],{405:function(t,n,a){"use strict";function e(t){t.languages.ini={comment:/^[ \t]*[;#].*$/m,selector:/^[ \t]*\[.*?\]/m,constant:/^[ \t]*[^\s=]+?(?=[ \t]*=)/m,"attr-value":{pattern:/=.*/,inside:{punctuation:/^[=]/}}}}t.exports=e,e.displayName="ini",e.aliases=[]}}]);
+//# sourceMappingURL=react-syntax-highlighter_languages_refractor_ini.ba5194b1.chunk.js.map
