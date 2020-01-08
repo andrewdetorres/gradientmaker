@@ -5,6 +5,9 @@ import atomOneLight from 'react-code-blocks/build/cjs/themes/atom-one-light';
 
 // Import Components
 import Direction from '../Direction/Direction';
+import ShareButton from '../Buttons/ShareButton';
+import SupportButton from '../Buttons/SupportButton';
+import ContributeButton from '../Buttons/ContributeButton';
 
 class GradientSelector extends Component {
   state = {
@@ -27,17 +30,11 @@ class GradientSelector extends Component {
   };
 
   handleFirstChangeComplete = (color) => {
-    console.log(color);
     this.setState({ firstBackground: color.rgb });
   };
 
   handleSecondChangeComplete = (color) => {
-    console.log(color);
     this.setState({ secondBackground: color.rgb });
-    // this.setState({
-    //   codeBlock:
-    // });
-
   };
 
   handleClick = () => {
@@ -136,18 +133,18 @@ class GradientSelector extends Component {
             </div>
             <div className="row justify-content-center my-3">
               <div className="text-center mx-3">
-                <button 
-                  onClick={this.handleClick} 
-                  className="color-button border-0" 
+                <button
+                  onClick={this.handleClick}
+                  className="color-button border-0"
                   style={firstButtonStyle}
                   />
                 {firstPicker}
                 <p>1st</p>
               </div>
               <div className="text-center mx-3">
-                <button 
-                  onClick={this.handleSecondClick} 
-                  className="color-button border-0" 
+                <button
+                  onClick={this.handleSecondClick}
+                  className="color-button border-0"
                   style={secondButtonStyle}
                   />
                 {secondPicker}
@@ -155,31 +152,31 @@ class GradientSelector extends Component {
               </div>
             </div>
             <div className="row justify-content-around my-3">
-              <Direction 
-                function={this.ChangeDirectionTop} 
+              <Direction
+                function={this.ChangeDirectionTop}
                 class="grad grad-top"/>
-              <Direction 
-                function={this.ChangeDirectionTopRight} 
+              <Direction
+                function={this.ChangeDirectionTopRight}
                 class="grad grad-top-right"/>
-              <Direction 
-                function={this.ChangeDirectionRight} 
+              <Direction
+                function={this.ChangeDirectionRight}
                 class="grad grad-right"/>
-              <Direction 
-                function={this.ChangeDirectionBottomRight} 
+              <Direction
+                function={this.ChangeDirectionBottomRight}
                 class="grad grad-bottom-right"/>
             </div>
             <div className="row justify-content-around my-3">
-              <Direction 
-                function={this.ChangeDirectionBottom} 
+              <Direction
+                function={this.ChangeDirectionBottom}
                 class="grad grad-bottom"/>
-              <Direction 
-                function={this.ChangeDirectionBottomLeft} 
+              <Direction
+                function={this.ChangeDirectionBottomLeft}
                 class="grad grad-bottom-left"/>
-              <Direction 
-                function={this.ChangeDirectionLeft} 
+              <Direction
+                function={this.ChangeDirectionLeft}
                 class="grad grad-left"/>
-              <Direction 
-                function={this.ChangeDirectionTopLeft} 
+              <Direction
+                function={this.ChangeDirectionTopLeft}
                 class="grad grad-top-left"/>
             </div>
             <div className="row justify-content-center my-3 mx-auto">
@@ -190,6 +187,11 @@ class GradientSelector extends Component {
                 showLineNumbers={false}
                 wrapLines
                 />
+            </div>
+            <div className="row justify-content-center mx-auto">
+              <ShareButton />
+              <SupportButton />
+              <ContributeButton />
             </div>
           </div>
         </div>
